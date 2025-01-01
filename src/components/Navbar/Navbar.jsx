@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from "../../imgs/logo.png"
 import { Link, NavLink } from 'react-router-dom';
 
 import { IoCart } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
+import { storeContext } from '../../context/StoreContext';
+
+
 export default function Navbar() {
+
+    let {counter} =useContext(storeContext)
+
     return (
     <>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{paddingInline:"50px"}}>
     <div className="container-fluid">
     <div className="logo-container">
         <img src={logo} alt="" />
@@ -53,9 +59,9 @@ export default function Navbar() {
             <NavLink className="nav-link" to="/cart" >
             Cart
             </NavLink>
-            <div className="IconHolder" exact>
+            <div className="IconHolder" >
             <IoCart />
-            <span>3</span>
+            <span>{counter}</span>
             </div>
         </div>
         <div className="wishlist">

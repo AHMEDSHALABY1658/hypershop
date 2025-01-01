@@ -15,18 +15,23 @@ import AuthLayout from './Layout/AuthLayout';
 import NotFound from './components/NotFound/NotFound';
 import { Offline, Online } from "react-detect-offline";
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
+import ProductDetails from './components/ProductDetails/ProductDetails';
+import { StoreContextProvider } from './context/StoreContext';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function App() {
   let routes = createBrowserRouter([
     {
       path: '/', element: <MainLayout />, children: [
-        { index: true, element: <ProtectedRoutes> <Home /></ProtectedRoutes>},
-        { path: 'home', element: <ProtectedRoutes> <Home /></ProtectedRoutes>},
-        { path: 'products', element:   <ProtectedRoutes> <Products /></ProtectedRoutes>},
-        { path: 'Categories', element:  <ProtectedRoutes> <Categories /></ProtectedRoutes>},
-        { path: 'brands', element:  <ProtectedRoutes> <Brands /></ProtectedRoutes>},
-        { path: 'Cart', element:  <ProtectedRoutes><Cart /></ProtectedRoutes>},
-        { path: 'Wishlist', element: <ProtectedRoutes> <Wishlist /></ProtectedRoutes>},
+        { index: true, element: <ProtectedRoutes> <Home /></ProtectedRoutes> },
+        { path: 'home', element: <ProtectedRoutes> <Home /></ProtectedRoutes> },
+        { path: 'products', element: <ProtectedRoutes> <Products /></ProtectedRoutes> },
+        { path: 'Categories', element: <ProtectedRoutes> <Categories /></ProtectedRoutes> },
+        { path: 'brands', element: <ProtectedRoutes> <Brands /></ProtectedRoutes> },
+        { path: 'Cart', element: <ProtectedRoutes><Cart /></ProtectedRoutes> },
+        { path: 'Wishlist', element: <ProtectedRoutes> <Wishlist /></ProtectedRoutes> },
+        { path: 'product-details/:id', element: <ProtectedRoutes> <ProductDetails /></ProtectedRoutes> },
         { path: '*', element: <NotFound /> },
       ]
     },
@@ -41,14 +46,19 @@ function App() {
   return (
     <>
 
-      <RouterProvider router={routes} />
+
+      <StoreContextProvider>
+        <RouterProvider router={routes} />
+      </StoreContextProvider>
+
+
+      <ToastContainer theme='colored' autoClose={700}/>
 
       <Offline>
         <div className="offline">
           you are offline Now!
         </div>
       </Offline>
-
 
     </>
   )
