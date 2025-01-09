@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import logo from "../../imgs/logo.png"
 import { Link, NavLink } from 'react-router-dom';
 
@@ -9,7 +9,23 @@ import { storeContext } from '../../context/StoreContext';
 
 export default function Navbar() {
 
-    let {counter} =useContext(storeContext)
+    let {counter,getCart,setCounter,getWishlist,Wishlist,setCountertWishlist} =useContext(storeContext)
+
+    useEffect(()=>{
+        (async()=>{
+            let data = await getCart()
+            setCounter(data.data.numOfCartItems)
+        })()
+        
+    },[])
+    useEffect(()=>{
+        (async()=>{
+            let data = await getWishlist()
+            setCountertWishlist(data.data.count)
+        })()
+        
+    },[])
+
 
     return (
     <>
@@ -61,7 +77,8 @@ export default function Navbar() {
             </NavLink>
             <div className="IconHolder" >
             <IoCart />
-            <span>{counter}</span>
+            {counter?<span>{counter}</span>:""}
+            
             </div>
         </div>
         <div className="wishlist">
@@ -70,7 +87,7 @@ export default function Navbar() {
             </NavLink>
             <div className="IconHolder">
             <FaHeart />
-            <span>5</span>
+            {counter?<span>{Wishlist}</span>:""}
             </div>
         </div>
         <NavLink className="signout" to="/Signin">signout</NavLink>

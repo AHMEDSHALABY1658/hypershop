@@ -3,9 +3,17 @@ import { Link } from 'react-router-dom'
 import { storeContext } from '../../context/StoreContext';
 import { useContext } from 'react';
 import { toast } from 'react-toastify';
+
+
+import { GoHeart } from "react-icons/go";
+import { GoHeartFill } from "react-icons/go";
+
 export default function Product({item}) {
-    let {counter,setCounter,addToCart} =useContext(storeContext)
+    let {counter,setCounter,addToCart,addToWishlist,getWishlist} =useContext(storeContext)
     let [btnLoading , setBtnLoading] = useState(true)
+    const [isLiked, setIsLiked] = useState(false);
+
+
     async function addProductToCart(productId){
         setBtnLoading(false)
         let data = await addToCart(productId)
@@ -18,6 +26,24 @@ export default function Product({item}) {
         }
 
     }
+
+    
+    async function addProductToWishlist(productId){
+        let data = await addToWishlist(productId)
+        console.log(data.data);
+        if (data.data.status === 'success') {
+            toast.success('Product added successfully to your wishlist');
+        }
+        setIsLiked(!isLiked)
+    }
+
+
+
+
+
+
+
+
 
 
     return (
@@ -38,11 +64,20 @@ export default function Product({item}) {
                             </div>
                         </div>
                         </Link>
-                        <button disabled={!btnLoading} onClick={()=>addProductToCart(item._id)}  className='btn bg-main w-100 text-white'>
-                            
+                        <div className='btn-product flex'> 
+                        <button disabled={!btnLoading} onClick={()=>addProductToCart(item._id)}  className='   btn  w-100 text-white ' style={{background:" rgb(48, 197, 34)"}}>
                             {btnLoading?" Add To cart":"loading..."}
                             </button>
+                            <div onClick={()=>addProductToWishlist((item._id))}>
+                                {isLiked ? (
+                                <GoHeartFill className="text-red-500 fontIcon" />
+                                ) : (
+                                <GoHeart className="text-main fontIcon" />
+                                )}
+                            </div>
 
+
+                        </div>
                     </div>
                 </div>
     </>

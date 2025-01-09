@@ -20,7 +20,9 @@ code {
 .text-main{
   color: rgb(48, 197, 34) !important;
 }
-
+.mainBack{
+  background: #8080804a;  
+}
 
 
 
@@ -40,15 +42,45 @@ code {
 .rating-color{
   color: #ffc908;
 }
-.product .btn{
+.product .btn-product{
   transition: transform 1s ,opacity 1s;
   transform: translateY(100%);
   opacity: 0;
 }
 
-.product:hover .btn{
+.product:hover .btn-product{
   opacity: 1;
   transform: translateY(0%);
-  background: rgb(48, 197, 34) !important;
+  /* background: rgb(48, 197, 34) !important; */
   color: white;
+}
+
+.btn-backgroung{
+    background: rgb(48, 197, 34) !important;
+}
+
+
+
+
+.flex{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+.text-red-500 {
+  color: #ff0000; /* اللون الأحمر */
+}
+
+.fontIcon {
+  font-size: 24px;
+  cursor: pointer;
 }

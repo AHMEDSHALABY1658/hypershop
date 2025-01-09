@@ -66,7 +66,13 @@
 
 
 
-
+.btn{
+  border: none;
+  background: transparent;
+  color: black;
+  padding: 0px !important;
+  margin: 0px !important;
+}
 
 .btn-Register{
   background: #13901d;
@@ -89,7 +95,13 @@
   border: none;
   padding: 5px 12px;
 }
-
+.brdr{
+  border: 1px solid #13901d !important;
+  border: none;
+  background: transparent;
+  color: black;
+  width: 24px;
+}
 
 
 
