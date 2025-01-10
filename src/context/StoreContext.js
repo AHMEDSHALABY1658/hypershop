@@ -59,6 +59,9 @@ async function pay(cartId, shippingAddress) {
     .catch(error => error);
 }
 
+
+
+
 function addToWishlist(productId){
     return axios.post('https://ecommerce.routemisr.com/api/v1/wishlist', { productId },{
         headers: {
@@ -77,7 +80,15 @@ async function getWishlist() {
         data
     ).catch(err => err)
 }
-
+async function DeleteWishlist(productId) {
+    return axios.delete(`https://ecommerce.routemisr.com/api/v1/wishlist/${productId}`, {
+        headers: {
+        token: localStorage.getItem('token')
+    }}
+    ).then(data =>
+        data
+    ).catch(err => err)
+}
 
 
 
@@ -90,7 +101,7 @@ export function StoreContextProvider({ children }) {
     let [counter, setCounter] = useState(0)
     let [Wishlist, setCountertWishlist] = useState(0)
 
-    return <storeContext.Provider value={{ counter, setCounter,addToCart ,getCart,DeleteItem,updateQTY,pay,addToWishlist,getWishlist,Wishlist,setCountertWishlist}}>
+    return <storeContext.Provider value={{ counter, setCounter,addToCart ,getCart,DeleteItem,updateQTY,pay,addToWishlist,getWishlist,Wishlist,setCountertWishlist,DeleteWishlist}}>
         {children}
     </storeContext.Provider>
 }

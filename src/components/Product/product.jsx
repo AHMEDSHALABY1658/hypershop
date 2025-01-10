@@ -9,7 +9,7 @@ import { GoHeart } from "react-icons/go";
 import { GoHeartFill } from "react-icons/go";
 
 export default function Product({item}) {
-    let {counter,setCounter,addToCart,addToWishlist,getWishlist} =useContext(storeContext)
+    let {counter,setCounter,addToCart,addToWishlist,getWishlist,setCountertWishlist,Wishlist} =useContext(storeContext)
     let [btnLoading , setBtnLoading] = useState(true)
     const [isLiked, setIsLiked] = useState(false);
 
@@ -32,7 +32,9 @@ export default function Product({item}) {
         let data = await addToWishlist(productId)
         console.log(data.data);
         if (data.data.status === 'success') {
+            console.log(data.data);
             toast.success('Product added successfully to your wishlist');
+            {setCountertWishlist(x=>x+1)}
         }
         setIsLiked(!isLiked)
     }

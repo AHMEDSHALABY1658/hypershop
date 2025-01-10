@@ -64,7 +64,11 @@
   padding: 10px 50px;
 }
 
-
+.flex{
+  display:flex ;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .btn{
   border: none;

@@ -12,6 +12,8 @@ export default function Cart() {
     let {getCart,DeleteItem,setCounter,updateQTY} =useContext(storeContext)
     let [data,setData]=useState(null)
     let[loading,setLoading]=useState(true)
+
+    
         useEffect(()=>{
             (async()=>{
                 let data = await getCart()
