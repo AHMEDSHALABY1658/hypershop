@@ -35,6 +35,7 @@ export default function Product({item}) {
             console.log(data.data);
             toast.success('Product added successfully to your wishlist');
             {setCountertWishlist(x=>x+1)}
+
         }
         setIsLiked(!isLiked)
     }

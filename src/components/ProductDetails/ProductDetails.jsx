@@ -15,6 +15,8 @@ export default function ProductDetails() {
     let{data} =await  axios.get(`https://ecommerce.routemisr.com/api/v1/products/${ProductId.id}`)
     SetProduct(data.data)
     setloading(false)
+    console.log(data.data);
+    
 }
 useEffect(()=>{
     getProduct()

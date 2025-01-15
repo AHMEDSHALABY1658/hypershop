@@ -5,9 +5,10 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import MainLayout from './Layout/MainLayout';
 import Home from './components/Home/Home';
 import Products from './components/Products/Products';
-import Categories from './components/Categories/Catefories';
+// import Categories from './components/Categories/Catefories';
 import Brands from './components/Brands/Brands';
 import Cart from './components/Cart/Cart';
+import About from './components/About/About';
 import Wishlist from './components/Wishlist/Wishlist';
 import Signin from './components/signin/Signin';
 import Signup from './components/Signup/Signup';
@@ -28,7 +29,7 @@ function App() {
         { index: true, element: <ProtectedRoutes> <Home /></ProtectedRoutes> },
         { path: 'home', element: <ProtectedRoutes> <Home /></ProtectedRoutes> },
         { path: 'products', element: <ProtectedRoutes> <Products /></ProtectedRoutes> },
-        { path: 'Categories', element: <ProtectedRoutes> <Categories /></ProtectedRoutes> },
+        { path: 'About', element: <ProtectedRoutes> <About /></ProtectedRoutes> },
         { path: 'brands', element: <ProtectedRoutes> <Brands /></ProtectedRoutes> },
         { path: 'Cart', element: <ProtectedRoutes><Cart /></ProtectedRoutes> },
         { path: 'Wishlist', element: <ProtectedRoutes> <Wishlist /></ProtectedRoutes> },

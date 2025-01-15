@@ -22,6 +22,8 @@ export default function Navbar() {
         (async()=>{
             let data = await getWishlist()
             setCountertWishlist(data.data.count)
+            console.log(data.data.count);
+            
         })()
         
     },[])
@@ -59,18 +61,18 @@ export default function Navbar() {
             </NavLink>
         </li>
         <li className="nav-item">
-            <NavLink className="nav-link" to="/categories">
-            Categories
-            </NavLink>
-        </li>
-        <li className="nav-item">
             <NavLink className="nav-link" to="/brands">
             Brands
             </NavLink>
         </li>
+        <li className="nav-item">
+            <NavLink className="nav-link" to="/About">
+            ABOUT
+            </NavLink>
+        </li>
         
         </ul>
-        <div className="navbar-nav">
+        <div className="navbar-nav" style={{gap:"10px"}}>
         <div className="cart">
             <NavLink className="nav-link" to="/cart" >
             Cart
@@ -81,16 +83,17 @@ export default function Navbar() {
             
             </div>
         </div>
+        <span>|</span>
         <div className="wishlist">
             <NavLink className="nav-link" to="/Wishlist">
             Wishlist
             </NavLink>
             <div className="IconHolder">
             <FaHeart />
-            {counter?<span>{Wishlist}</span>:""}
+            {Wishlist?<span>{Wishlist}</span>:""}
             </div>
         </div>
-        <NavLink className="signout" to="/Signin">signout</NavLink>
+        <NavLink className="signout" to="/Signin" onClick={()=>{localStorage.clear()}}>signout</NavLink>
         </div>
     </div>
     </div>

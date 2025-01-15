@@ -41,7 +41,7 @@ export default function Cart() {
             console.log(data);
             if(data.data.status=='success'){
                 toast.success('product updated successfully.')
-                setCounter(data.data.numOfCartItem)
+                // setCounter(data.data.numOfCartItem)
                 setData(data)
             }
         }

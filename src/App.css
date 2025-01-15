@@ -41,17 +41,24 @@
 }
 .IconHolder span{
   position: absolute;
-  top: -16px;
-  left: 20px;
+  top: -13px;
+  left: 15px;
   background: #ff00008a;
   border-radius: 50%;
-  padding: 1px 5px;
+  padding: 0px 5px;
 }
 .IconHolder  svg{
   font-size: 23px;
 }
-
-
+.wishlist .nav-link{
+  padding: 5px !important;
+}
+.cart  .nav-link{
+  padding: 5px !important;
+}
+.navbar-nav span{
+  margin-inline: 3px;
+}
 
 
 .offline{
