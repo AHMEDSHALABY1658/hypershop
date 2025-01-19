@@ -37,7 +37,7 @@ export default function Products() {
     if(isLoading) return <Loading/>
     return (
     <>
-            <div className="container my-5">
+            <div className="container my-1 boder-top">
             <input
                 type="text"
                 placeholder="Search for a product..."

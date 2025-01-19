@@ -31,7 +31,7 @@ export default function Wishlist() {
     return (
         <div className='container my-2 p-3 rounded-1 mainBack'>
             <h2>WishList</h2>
-            <p className='text-main'>Total WishList: {wishlist.count}</p>
+            <p className='text-main'>Total WishList: {wishlist.length}</p>
 
             <div>
             {wishlist?.map(item => (

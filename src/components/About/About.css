@@ -2,6 +2,7 @@
 .box {
     background: #2c2e2d;
     border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
     color: white;
 }
 .box button {

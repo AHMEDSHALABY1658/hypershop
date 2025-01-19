@@ -1,0 +1,64 @@
+.MainSlider{
+    position: relative; /* مهم لتحديد موقع السلايدر */
+    overflow: visible; /* السماح للعناصر بالخروج من الحواف */
+}
+#Swiper-mainSlider {
+    width: 100%;
+    height: 100%;
+}
+
+.category-card {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.category-card img {
+    width: 130px;
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 85%;
+}
+
+.category-card p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000; /* لون السهم */
+  background-color: rgba(255, 255, 255, 0.8); /* خلفية السهم */
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* ضمان ظهور الأسهم فوق السلايدر */
+}
+
+.swiper-button-next {
+  right: 10px; /* جعل السهم الأيمن بعيدًا عن الحافة */
+}
+
+.swiper-button-prev {
+  left: 10px; /* جعل السهم الأيسر بعيدًا عن الحافة */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #ddd; /* تغيير لون الخلفية عند التمرير */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 16px; /* حجم رمز السهم */
+    font-weight: bold;
+}

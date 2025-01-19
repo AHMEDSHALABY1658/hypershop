@@ -29,7 +29,7 @@ export default function Brands() {
 
     return (
         <div>
-            <div className="container my-5">
+            <div className="container my-1 boder-top">
                 <div className="row">
                     {loading ? (
                        <Loading/> // عرض رسالة أثناء التحميل

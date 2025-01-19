@@ -121,3 +121,38 @@
   text-decoration: none;
   color: inherit;
 }
+
+
+
+
+.boder-top{
+  border-top: 3px solid rgba(255, 166, 0, 0.432);
+  width: 100%;
+  padding-top: 30px;
+
+}
+
+
+
+
+
+
+
+
+.title{
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+}
+.title::before{
+  content: '';
+  position: absolute;
+  width: 139px;
+  bottom: -4px;
+  left: 45%;
+  border-bottom: 3px solid orange;
+}
+
+.text-D{
+  text-decoration: none;
+}
