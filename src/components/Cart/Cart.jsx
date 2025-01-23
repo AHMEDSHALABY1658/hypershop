@@ -61,9 +61,10 @@ export default function Cart() {
         //   }
 
     return (
-    <div className='container my-2 p-3 rounded-1 mainBack'>
+    <div className='container my-2 p-3 rounded-1' style={{background:"#8080800a"}}>
         <h2>Shop Cart</h2>
         <p className='text-main'>Total Cart price : {data?.data.data.totalCartPrice}</p>
+        <div style={{display:"flex",flexDirection:"column",gap:"7px"}}>
         {data?.data.data.products.map(item =>{
             return <div key={item._id} className="row py-2 border-bottom">
                 <div className="col-md-1">
@@ -83,9 +84,10 @@ export default function Cart() {
                     </div>
                 </div>
             })}
-        <Link to={`/address/${data.data.data._id}`} style={{ background: "#13901d", color: "white", border: "none", padding: "10px 20px", borderRadius: "5px" ,textDecoration:"none"}}>
+        <Link to={`/address/${data.data.data._id}`} style={{ background: "#13901d", color: "white", border: "none", padding: "10px 20px", borderRadius: "5px" ,textDecoration:"none",textAlign:"center"}}>
             Place order
         </Link>
+        </div>
     </div>
     )
 }

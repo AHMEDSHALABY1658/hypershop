@@ -126,10 +126,13 @@
 
 
 .boder-top{
-  border-top: 3px solid rgba(255, 166, 0, 0.432);
+  border-top: 4px solid rgba(255, 166, 0, 0.432);
   width: 100%;
-  padding-top: 30px;
+  padding-top: 3px;
 
+}
+.padding-top{
+  padding-top: 20px;
 }
 
 
@@ -155,4 +158,147 @@
 
 .text-D{
   text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+.holderImage{
+  height: 100px;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-flow: wrap;
+  column-gap: 1px;
+  row-gap: 2px;
+}
+.holderImage img{
+  border: 1px solid #13901d;
+}
+
+
+
+
+
+
+
+
+
+
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 166, 0, 0.582) !important; /* لون النقاط */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: darkgoldenrod !important; /* لون النقطة النشطة */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* sort */
+.holder-div{
+  display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+.holder-div h5{
+  padding: 0px;
+  margin: 0px;
+}
+.filter{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.Sort{
+      display: flex  ;
+      align-items: center;
+      gap: 6px;
+      border: none;
+      background: lightgray;
+      color: white;
+      padding: 9px 16px;
+      padding-right: 8px;
+      z-index: 2;
+}
+.value-sort{
+  display: flex;
+  align-items:center ;
+  gap: 6px;
+}
+.value{
+  position: absolute;
+  top: 46px;
+  z-index: 1;
+  left: 0px;
+  background: #292c2b;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  border-top: 3px solid orange;
+  margin-top: 1px;
+  visibility: hidden;
+  padding: unset  ;
+}
+
+.value li{
+  color: white;
+  list-style: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.value li:hover {
+  background: #444;
+}
+
+
+
+
+
+
+
+
+/* brand */
+.card-body {
+  visibility: hidden; 
+  transition:  0.3s ease-out; 
+
+}
+
+.card:hover .card-body {
+  visibility: visible; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-Address{
+  background: #13901d;
+  width: 100%;
+  color: white !important;
 }

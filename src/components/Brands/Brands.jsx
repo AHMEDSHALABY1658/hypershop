@@ -29,8 +29,8 @@ export default function Brands() {
 
     return (
         <div>
-            <div className="container my-1 boder-top">
-                <div className="row">
+            <div className="container my-1 boder-top padding-top">
+                <div className="row" style={{rowGap:"8px",cursor:"pointer"}}>
                     {loading ? (
                        <Loading/> // عرض رسالة أثناء التحميل
                     ) : error ? (

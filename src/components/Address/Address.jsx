@@ -68,7 +68,7 @@ export default function Address() {
                 :''
                 }
 
-                <button disabled={!(Address.isValid && Address.dirty)} type="submit" className='btn-Address'>pay</button>
+                <button disabled={!(Address.isValid && Address.dirty)} type="submit" className='btn-Address  '>pay</button>
             </form>
         </div>
     </div>
