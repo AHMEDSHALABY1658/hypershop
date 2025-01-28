@@ -28,7 +28,7 @@ export default function SubProducts() {
 
     return (
         <div className="container my-5 " style={{display:"flex",flexDirection:"column",gap:"20px"}}>
-            <h5 className='title'>Best Selling</h5>
+            <h5 className='title-2'>Best Selling</h5>
             {loading ? (
                 <p>Loading...</p> // عرض رسالة أثناء التحميل
             ) : (

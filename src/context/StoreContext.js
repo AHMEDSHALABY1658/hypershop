@@ -96,12 +96,76 @@ async function DeleteWishlist(productId) {
 
 
 
+
+
+
+
+async function getAllOrders() {
+    try {
+        // احصل على التوكن من localStorage
+        const token = localStorage.getItem('token');
+        
+        // إذا التوكن غير موجود، أوقف العملية
+        if (!token) {
+            console.error('Token not found');
+            return null;
+        }
+        
+        // فك التشفير للحصول على الـ id من التوكن
+        const base64Payload = token.split('.')[1]; // الجزء المشفر من التوكن
+        const decodedPayload = JSON.parse(atob(base64Payload)); // فك تشفير Base64
+        const userId = decodedPayload.id; // استخراج الـ id
+        
+        // تحقق من وجود الـ id
+        if (!userId) {
+            console.error('User ID not found in token');
+            return null;
+        }
+        
+        // استخدام الـ id في عنوان URL
+        const response = await axios.get(
+            `https://ecommerce.routemisr.com/api/v1/orders/user/${userId}`, // وضع الـ id هنا
+            {
+                headers: {
+                    token: token, // استخدم التوكن في الترويسة
+                },
+            }
+        );
+
+        return (response.data) // إذا كانت الاستجابة ناجحة، أعد البيانات
+    } catch (error) {
+        console.error('Error fetching orders:', error);
+        return null; // إذا كان هناك خطأ، أعد null
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export function StoreContextProvider({ children }) {
 
     let [counter, setCounter] = useState(0)
     let [Wishlist, setCountertWishlist] = useState(0)
 
-    return <storeContext.Provider value={{ counter, setCounter,addToCart ,getCart,DeleteItem,updateQTY,pay,addToWishlist,getWishlist,Wishlist,setCountertWishlist,DeleteWishlist}}>
+    return <storeContext.Provider value={{ counter, setCounter,addToCart ,getCart,DeleteItem,updateQTY,pay,addToWishlist,getWishlist,Wishlist,setCountertWishlist,DeleteWishlist,getAllOrders}}>
         {children}
     </storeContext.Provider>
 }

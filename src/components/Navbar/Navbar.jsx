@@ -83,7 +83,7 @@ export default function Navbar() {
             
             </div>
         </div>
-        <span>|</span>
+        <span className='span-nav'>|</span>
         <div className="wishlist">
             <NavLink className="nav-link" to="/Wishlist">
             Wishlist

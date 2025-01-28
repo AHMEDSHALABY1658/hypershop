@@ -35,14 +35,26 @@ if(isLoading) return <Loading/>
                 modules={[Navigation, Autoplay]}
                 breakpoints={{
                     320: {
+                        slidesPerView: 2,
+                    },
+                    620: {
+                        slidesPerView: 3,
+                    },
+                    740: {
                         slidesPerView: 4,
                     },
-                    768: {
+                    1120:{
+                        slidesPerView: 5,
+                    },
+                    1360:{
                         slidesPerView: 6,
                     },
-                    1024: {
-                        slidesPerView: 8,
+                    1528:{
+                        slidesPerView: 7,
                     },
+                    1762:{
+                        slidesPerView: 8,
+                    }
                 }}
                 loop={true}
                 speed={1150}

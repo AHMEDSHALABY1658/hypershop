@@ -61,7 +61,7 @@ export default function Products() {
                             onClick={() => setDropdownVisible(!isDropdownVisible)}
                             style={{ cursor: 'pointer' }}
                         >
-                            <h5 className='text-main'>Sort by:</h5>
+                            <h5 >Sort by:</h5>
                             <span style={{ fontSize: "19px" }}>|</span>
                             <div className="value-sort">
                                 <h5>{sortValue}</h5>

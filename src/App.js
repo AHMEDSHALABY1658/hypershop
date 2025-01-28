@@ -20,6 +20,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import { StoreContextProvider } from './context/StoreContext';
 import { ToastContainer, toast } from 'react-toastify';
 import Address from './components/Address/Address';
+import AllOrders from './components/AllOrders/AllOrders';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         { path: 'Wishlist', element: <ProtectedRoutes> <Wishlist /></ProtectedRoutes> },
         { path: 'product-details/:id', element: <ProtectedRoutes> <ProductDetails /></ProtectedRoutes> },
         { path: 'address/:id', element: <ProtectedRoutes> <Address /></ProtectedRoutes> },
+        { path: 'allorders', element: <ProtectedRoutes> <AllOrders /></ProtectedRoutes> },
         { path: '*', element: <NotFound /> },
       ]
     },
