@@ -14,7 +14,7 @@ const Footer = () => {
 
                 {/* Right */}
                 <div>
-                    <Link to="https://facebook.com" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
+                    <Link to="https://www.facebook.com/profile.php?id=100055856226017" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
                         <i className="fab fa-facebook-f"></i>
                     </Link>
                     <Link to="https://twitter.com" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
@@ -23,13 +23,13 @@ const Footer = () => {
                     <Link to="https://google.com" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
                         <i className="fab fa-google"></i>
                     </Link>
-                    <Link to="https://instagram.com" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
+                    <Link to="https://www.instagram.com/ahmed_shalaby03" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
                         <i className="fab fa-instagram"></i>
                     </Link>
-                    <Link to="https://linkedin.com" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
+                    <Link to="https://www.linkedin.com/in/ahmed-farag-shalaby" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
                         <i className="fab fa-linkedin"></i>
                     </Link>
-                    <Link to="https://github.com" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
+                    <Link to="https://github.com/AHMEDSHALABY1658" className="me-4 text-reset" style={{ textDecoration: 'none' }}>
                         <i className="fab fa-github"></i>
                     </Link>
                 </div>
