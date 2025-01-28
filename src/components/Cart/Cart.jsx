@@ -32,7 +32,7 @@ export default function Cart() {
             console.log(data);
             if(data.data.status=='success'){
                 toast.error('product deleted successfully.')
-                setCounter(data.data.numOfCartItem)
+                setCounter(data.data.numOfCartItems)
                 setData(data)
             }
         }

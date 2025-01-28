@@ -82,7 +82,6 @@
             </div>
             <button
             onClick={() =>{ 
-                setCounter(counter + 1)
                 addProductToCart(product._id);
             }}
             className="btn-cart bg-main w-100 text-white"
