@@ -3,7 +3,7 @@
     import { storeContext } from "../../context/StoreContext";
     import { useParams } from "react-router-dom";
     import Loading from "../Loading/Loading";
-
+    import { toast } from 'react-toastify';
     // استيراد Swiper
     import { Swiper, SwiperSlide } from "swiper/react";
     import "swiper/css";
@@ -14,7 +14,7 @@
     const { id } = useParams();
     const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(true);
-    const { counter, setCounter } = useContext(storeContext);
+    const { counter, setCounter,addToCart } = useContext(storeContext);
 
     async function getProduct() {
     try {
@@ -29,7 +29,16 @@
         setLoading(false);
     }
     }
-
+    async function addProductToCart(productId){
+            let data = await addToCart(productId)
+            console.log(data.data.status);
+    
+            if (data.data.status === 'success') {
+                toast.success('Product added successfully');
+                {setCounter(data.data.numOfCartItems) }
+            }
+    
+        }
     useEffect(() => {
     getProduct();
     }, [id]);
@@ -72,7 +81,10 @@
             </div>
             </div>
             <button
-            onClick={() => setCounter(counter + 1)}
+            onClick={() =>{ 
+                setCounter(counter + 1)
+                addProductToCart(product._id);
+            }}
             className="btn-cart bg-main w-100 text-white"
             >
             Add To Cart
